@@ -4,9 +4,8 @@ cfile = ct.cdll.LoadLibrary("test")
 
 cunko = cfile.unko
 
-cunko.argtypes = None
+cunko.argtypes = ct.c_int , ct.c_float , ct.c_double
 cunko.restype = ct.c_int
 
-cres = cunko()
-
-print(cres)
+def execute(test):
+    cunko(test)
